@@ -19,7 +19,7 @@
     "dev:watch": "ts-node-dev --respawn src/nodes/ui_timelines_chart.ts",
     "clean": "rimraf dist/*",
     "tsc": "tsc",
-    "copy-files": "npx babel src --out-dir dist --copy-files",
+    "copy-files": "npx babel src/nodes --out-dir ./nodes --copy-files",
     "build": "npm-run-all clean copy-files tsc",
     "start": "node ./node_modules/node-red/red.js --userDir ./data --settings ./data/settings.js",
     "start:debug": "node --inspect-brk=0.0.0.0:9229 ./node_modules/node-red/red.js --userDir ./data --settings ./data/settings.js"
