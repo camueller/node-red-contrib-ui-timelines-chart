@@ -12,6 +12,7 @@ const nodeInit = (RED) => {
         configs: {
             xTickFormat: define_1.myConst.items.xTickFormat.default,
             maxLineHeight: define_1.myConst.items.maxLineHeight.default,
+            topMargin: define_1.myConst.items.topMargin.default,
             startDateTime: define_1.myConst.items.startDateTime.default,
             endDateTime: define_1.myConst.items.endDateTime.default,
             zColorScale: define_1.myConst.items.zColorScale.default,
@@ -411,7 +412,7 @@ const nodeInit = (RED) => {
                                         .width(${$scope.parent.clientWidth})
                                         // .maxHeight(${$scope.parent.clientHeight})
                                         .maxLineHeight(${msg.configs.maxLineHeight.toString()})
-                                        .topMargin(60)
+                                        .topMargin(${msg.configs.topMargin.toString()})
                                         .rightMargin(90)
                                         .leftMargin(90)
                                         .bottomMargin(40)
@@ -559,7 +560,7 @@ const nodeInit = (RED) => {
      * @returns {statusChart.makeGraphBase}
      */
     function makeGraph(_node, _config, _msg) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17, _18, _19, _20, _21, _22, _23, _24, _25, _26, _27, _28, _29, _30, _31, _32, _33, _34, _35, _36, _37, _38, _39, _40, _41, _42;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17, _18, _19, _20, _21, _22, _23, _24, _25, _26, _27, _28, _29, _30, _31, _32, _33, _34, _35, _36, _37, _38, _39, _40, _41, _42, _43, _44, _45, _46, _47;
         try {
             // 処理開始
             _node.status({ fill: "blue", shape: "dot", text: "resources.message.connect" });
@@ -581,9 +582,10 @@ const nodeInit = (RED) => {
                 resetZoomLabelFontSize: (_17 = (_16 = (_15 = (_14 = (_13 = _msg.payload) === null || _13 === void 0 ? void 0 : _13.settings) === null || _14 === void 0 ? void 0 : _14.resetZoom) === null || _15 === void 0 ? void 0 : _15.labelFontSize) !== null && _16 !== void 0 ? _16 : _config.resetZoomLabelFontSize) !== null && _17 !== void 0 ? _17 : define_1.myConst.items.resetZoomLabelFontSize.default,
                 resetZoomLabelColor: (_22 = (_21 = (_20 = (_19 = (_18 = _msg.payload) === null || _18 === void 0 ? void 0 : _18.settings) === null || _19 === void 0 ? void 0 : _19.resetZoom) === null || _20 === void 0 ? void 0 : _20.labelColor) !== null && _21 !== void 0 ? _21 : _config.resetZoomLabelColor) !== null && _22 !== void 0 ? _22 : define_1.myConst.items.resetZoomLabelColor.default,
                 maxLineHeight: (_27 = (_26 = (_25 = (_24 = (_23 = _msg.payload) === null || _23 === void 0 ? void 0 : _23.settings) === null || _24 === void 0 ? void 0 : _24.chart) === null || _25 === void 0 ? void 0 : _25.height) !== null && _26 !== void 0 ? _26 : _config.maxLineHeight) !== null && _27 !== void 0 ? _27 : define_1.myConst.items.maxLineHeight.default,
-                lineColors: (_32 = (_31 = (_30 = (_29 = (_28 = _msg.payload) === null || _28 === void 0 ? void 0 : _28.settings) === null || _29 === void 0 ? void 0 : _29.chart) === null || _30 === void 0 ? void 0 : _30.lineColors) !== null && _31 !== void 0 ? _31 : _config.lineColors) !== null && _32 !== void 0 ? _32 : define_1.myConst.items.lineColors.default,
-                enableAnimations: (_37 = (_36 = (_35 = (_34 = (_33 = _msg.payload) === null || _33 === void 0 ? void 0 : _33.settings) === null || _34 === void 0 ? void 0 : _34.options) === null || _35 === void 0 ? void 0 : _35.enableAnimations) !== null && _36 !== void 0 ? _36 : _config.enableAnimations) !== null && _37 !== void 0 ? _37 : define_1.myConst.items.enableAnimations.default,
-                enableDateMarker: (_42 = (_41 = (_40 = (_39 = (_38 = _msg.payload) === null || _38 === void 0 ? void 0 : _38.settings) === null || _39 === void 0 ? void 0 : _39.options) === null || _40 === void 0 ? void 0 : _40.enableDateMarker) !== null && _41 !== void 0 ? _41 : _config.enableDateMarker) !== null && _42 !== void 0 ? _42 : define_1.myConst.items.enableDateMarker.default,
+                topMargin: (_32 = (_31 = (_30 = (_29 = (_28 = _msg.payload) === null || _28 === void 0 ? void 0 : _28.settings) === null || _29 === void 0 ? void 0 : _29.chart) === null || _30 === void 0 ? void 0 : _30.topMargin) !== null && _31 !== void 0 ? _31 : _config.topMargin) !== null && _32 !== void 0 ? _32 : define_1.myConst.items.topMargin.default,
+                lineColors: (_37 = (_36 = (_35 = (_34 = (_33 = _msg.payload) === null || _33 === void 0 ? void 0 : _33.settings) === null || _34 === void 0 ? void 0 : _34.chart) === null || _35 === void 0 ? void 0 : _35.lineColors) !== null && _36 !== void 0 ? _36 : _config.lineColors) !== null && _37 !== void 0 ? _37 : define_1.myConst.items.lineColors.default,
+                enableAnimations: (_42 = (_41 = (_40 = (_39 = (_38 = _msg.payload) === null || _38 === void 0 ? void 0 : _38.settings) === null || _39 === void 0 ? void 0 : _39.options) === null || _40 === void 0 ? void 0 : _40.enableAnimations) !== null && _41 !== void 0 ? _41 : _config.enableAnimations) !== null && _42 !== void 0 ? _42 : define_1.myConst.items.enableAnimations.default,
+                enableDateMarker: (_47 = (_46 = (_45 = (_44 = (_43 = _msg.payload) === null || _43 === void 0 ? void 0 : _43.settings) === null || _44 === void 0 ? void 0 : _44.options) === null || _45 === void 0 ? void 0 : _45.enableDateMarker) !== null && _46 !== void 0 ? _46 : _config.enableDateMarker) !== null && _47 !== void 0 ? _47 : define_1.myConst.items.enableDateMarker.default,
             };
             /* debug */
             // for (const [key, value] of Object.entries(_createConf)) {
@@ -640,6 +642,7 @@ const nodeInit = (RED) => {
                     resetZoomLabelFontSize: _createConf.resetZoomLabelFontSize,
                     resetZoomLabelColor: _createConf.resetZoomLabelColor,
                     maxLineHeight: _createConf.maxLineHeight,
+                    topMargin: _createConf.topMargin,
                     zColorScale: _zColorScale,
                     enableAnimations: _createConf.enableAnimations,
                     enableDateMarker: _createConf.enableDateMarker,

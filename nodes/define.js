@@ -49,6 +49,12 @@ var myConst;
             minNum: 1,
             maxNum: 255,
         },
+        topMargin: {
+            type: "number",
+            default: 60,
+            minNum: 1,
+            maxNum: 255,
+        },
         enableAnimations: {
             type: "boolean",
             default: false,
